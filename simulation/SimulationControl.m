@@ -89,9 +89,9 @@ classdef SimulationControl < handle
             % Plot SNR
             ax = obj.SnrAxes;
             plot(ax,obj.SnrSampleIdx,obj.SnrValues);
-            title(ax,'Received SNR');
+            title(ax,'Received SINR');
             xlabel(ax,'Sample');
-            ylabel(ax,'SNR (dB)');
+            ylabel(ax,'SINR (dB)');
             ylim(ax,[min(0,min(obj.SnrValues)) max(50,max(obj.SnrValues))]);
             xlim(ax,[min(obj.SnrSampleIdx) max(obj.SnrSampleIdx)])
         end
@@ -290,7 +290,7 @@ classdef SimulationControl < handle
 
         function plotSignalAoa(~,ax,soiAoa,intAoa)
             scatter(ax,soiAoa(1,:),soiAoa(2,:),"red",DisplayName='SOI Location',SizeData=50,LineWidth=2);
-            scatter(ax,intAoa(1,:),intAoa(2,:),"yellow",DisplayName='Interference Location',SizeData=50,LineWidth=2);
+            scatter(ax,intAoa(1,:),intAoa(2,:),"green",DisplayName='Interference Location',SizeData=50,LineWidth=2);
         end
     end
 
